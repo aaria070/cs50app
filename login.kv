@@ -1,0 +1,37 @@
+ScreenManagement:
+    LoginPage:
+    UserPage:
+
+<LoginPage>:
+    name: "login_page"
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Email'
+            font_size: 18
+            halign: 'left'
+            text_size:root.width-20, 20
+        TextInput:
+            id: email
+            multiline: False
+            font_size: 28
+        Label:
+            text: 'Password'
+            font_size: 18
+            halign: 'left'
+            text_size:root.width-20, 20
+        TextInput:
+            id: passw
+            multiline: False
+            password: True # hide password
+            font_size: 28
+        Button:
+            text: "Login"
+            font_size: 24
+            on_release: root.verify_credentials()
+
+<UserPage>:
+    name: "user"
+    Button:
+        text: "back"
+        on_release: app.root.current = "login_page"
